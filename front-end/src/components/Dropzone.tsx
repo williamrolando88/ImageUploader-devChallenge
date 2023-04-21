@@ -1,5 +1,6 @@
 import { Typography, alpha, styled } from "@mui/material";
 import { FC } from "react";
+import Iconify from "./Iconify";
 
 const StyledDropZone = styled("div")(({ theme }) => ({
   outline: "none",
@@ -25,6 +26,11 @@ const StyledDropZone = styled("div")(({ theme }) => ({
 const Dropzone: FC = () => {
   return (
     <StyledDropZone>
+      <Iconify
+        icon="clarity:picture-line"
+        size={100}
+        sx={{ color: "GrayText" }}
+      />
       <Typography color="GrayText" variant="caption">
         Drag & Drop your image here
       </Typography>
