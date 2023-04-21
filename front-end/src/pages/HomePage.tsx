@@ -1,5 +1,6 @@
 import { Button, Paper, Stack, Typography } from "@mui/material";
 import { FC } from "react";
+import Dropzone from "../components/Dropzone";
 
 const HomePage: FC = () => {
   return (
@@ -15,7 +16,9 @@ const HomePage: FC = () => {
           <Typography variant="caption" color="GrayText">
             File should be JPEG, PNG...
           </Typography>
-          Here comes the dropzone
+
+          <Dropzone />
+
           <Typography variant="caption" color="GrayText">
             Or
           </Typography>
