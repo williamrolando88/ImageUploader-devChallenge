@@ -1,5 +1,6 @@
 import { Typography, alpha, styled } from "@mui/material";
-import { FC } from "react";
+import { FC, useCallback } from "react";
+import { useDropzone } from "react-dropzone";
 import Iconify from "./Iconify";
 
 const StyledDropZone = styled("div")(({ theme }) => ({
@@ -24,8 +25,15 @@ const StyledDropZone = styled("div")(({ theme }) => ({
 }));
 
 const Dropzone: FC = () => {
+  const onDrop = useCallback((acceptedFiles: File[]) => {
+    console.log(acceptedFiles);
+  }, []);
+
+  const { getRootProps, getInputProps } = useDropzone({ onDrop });
+
   return (
-    <StyledDropZone>
+    <StyledDropZone {...getRootProps()}>
+      <input {...getInputProps()} />
       <Iconify
         icon="clarity:picture-line"
         size={100}
